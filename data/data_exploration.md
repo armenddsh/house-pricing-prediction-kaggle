@@ -1,3 +1,139 @@
+---
+
+# 🏠 House Prices - Advanced Regression Techniques
+## Predict sales prices and practice feature engineering, RFs, and gradient boosting
+
+
+## 🎯 Target Variable
+
+* **SalePrice** — The property's sale price in dollars (target variable).
+
+---
+
+## 🏗️ Property & Building Information
+
+* **MSSubClass** — Building class
+* **MSZoning** — General zoning classification
+* **LotFrontage** — Linear feet of street connected to property
+* **LotArea** — Lot size (square feet)
+* **Street** — Road access type
+* **Alley** — Alley access type
+* **LotShape** — General lot shape
+* **LandContour** — Flatness of the property
+* **Utilities** — Utilities available
+* **LotConfig** — Lot configuration
+* **LandSlope** — Slope of property
+* **Neighborhood** — Physical location within Ames
+* **Condition1** — Proximity to main road or railroad
+* **Condition2** — Additional proximity feature (if present)
+* **BldgType** — Type of dwelling
+* **HouseStyle** — Dwelling style
+
+---
+
+## 🧱 Structure Quality & Condition
+
+* **OverallQual** — Overall material and finish quality
+* **OverallCond** — Overall condition
+* **YearBuilt** — Original construction year
+* **YearRemodAdd** — Remodel year
+* **RoofStyle** — Roof style
+* **RoofMatl** — Roof material
+* **Exterior1st** — Primary exterior covering
+* **Exterior2nd** — Secondary exterior covering
+* **MasVnrType** — Masonry veneer type
+* **MasVnrArea** — Masonry veneer area
+* **ExterQual** — Exterior material quality
+* **ExterCond** — Exterior condition
+* **Foundation** — Foundation type
+
+---
+
+## 🏚️ Basement Features
+
+* **BsmtQual** — Basement height
+* **BsmtCond** — Basement condition
+* **BsmtExposure** — Walkout/garden-level exposure
+* **BsmtFinType1** — Type 1 finished basement area
+* **BsmtFinSF1** — Finished area (Type 1, square feet)
+* **BsmtFinType2** — Type 2 finished basement area
+* **BsmtFinSF2** — Finished area (Type 2, square feet)
+* **BsmtUnfSF** — Unfinished basement area
+* **TotalBsmtSF** — Total basement square footage
+
+---
+
+## 🔥 Heating & Utilities
+
+* **Heating** — Heating type
+* **HeatingQC** — Heating quality/condition
+* **CentralAir** — Central A/C presence
+* **Electrical** — Electrical system
+
+---
+
+## 🏡 Living Area & Rooms
+
+* **1stFlrSF** — First-floor square feet
+* **2ndFlrSF** — Second-floor square feet
+* **LowQualFinSF** — Low-quality finished area (all floors)
+* **GrLivArea** — Above-grade living area (square feet)
+* **BsmtFullBath** — Basement full bathrooms
+* **BsmtHalfBath** — Basement half bathrooms
+* **FullBath** — Above-grade full bathrooms
+* **HalfBath** — Above-grade half bathrooms
+* **Bedroom** — Bedrooms above basement level
+* **Kitchen** — Number of kitchens
+* **KitchenQual** — Kitchen quality
+* **TotRmsAbvGrd** — Total rooms above grade (excluding bathrooms)
+* **Functional** — Home functionality rating
+
+---
+
+## 🔥 Fireplaces
+
+* **Fireplaces** — Number of fireplaces
+* **FireplaceQu** — Fireplace quality
+
+---
+
+## 🚗 Garage Features
+
+* **GarageType** — Garage location
+* **GarageYrBlt** — Year garage was built
+* **GarageFinish** — Interior garage finish
+* **GarageCars** — Garage capacity (cars)
+* **GarageArea** — Garage size (square feet)
+* **GarageQual** — Garage quality
+* **GarageCond** — Garage condition
+
+---
+
+## 🌳 Outdoor & Miscellaneous Features
+
+* **PavedDrive** — Paved driveway indicator
+* **WoodDeckSF** — Wood deck area (square feet)
+* **OpenPorchSF** — Open porch area
+* **EnclosedPorch** — Enclosed porch area
+* **3SsnPorch** — Three-season porch area
+* **ScreenPorch** — Screen porch area
+* **PoolArea** — Pool area (square feet)
+* **PoolQC** — Pool quality
+* **Fence** — Fence quality
+* **MiscFeature** — Miscellaneous feature
+* **MiscVal** — Value of miscellaneous feature
+
+---
+
+## 🗓️ Sale Information
+
+* **MoSold** — Month sold
+* **YrSold** — Year sold
+* **SaleType** — Type of sale
+* **SaleCondition** — Condition of sale
+
+---
+
 # Data Exploration
 
 ## Data Description
@@ -291,3 +427,205 @@ df_test["Electrical"] = df_test["Electrical"].fillna(df_test["Electrical"].mode(
 ### MSSubClass
 
 Data doesn't have Outliers
+
+### LotFrontage
+
+Data does have Outliers
+
+### OverallQual
+
+Data does have Outliers
+
+### OverallCond
+
+Data does have Outliers
+
+### YearBuilt
+
+Data does have Outliers
+
+### YearRemodAdd
+
+Data doesn't have Outliers
+
+### MasVnrArea
+
+Data does have Outliers
+
+### BsmtFinSF1
+
+Data does have Outliers
+
+### BsmtFinSF2
+
+Data does have Outliers
+
+### BsmtUnfSF
+
+Data does have Outliers
+
+### TotalBsmtSF
+
+Data does have Outliers
+
+### 1stFlrSF
+
+Data does have Outliers
+
+### 2ndFlrSF
+
+Data does have Outliers
+
+### LowQualFinSF
+
+Data does have Outliers
+
+### GrLivArea
+
+Data does have Outliers
+
+### BsmtFullBath
+
+Data does have Outliers
+
+### BsmtHalfBath
+
+Data does have Outliers
+
+### FullBath
+
+Data doesn't have Outliers
+
+### HalfBath
+
+Data doesn't have Outliers
+
+### BedroomAbvGr
+
+Data does have Outliers
+
+### KitchenAbvGr
+
+Data does have Outliers
+
+### TotRmsAbvGrd
+
+Data does have Outliers
+
+### Fireplaces
+
+Data does have Outliers
+
+### GarageYrBlt
+
+Data does have Outliers
+
+### GarageCars
+
+Data does have Outliers
+
+### GarageArea
+
+Data does have Outliers
+
+### WoodDeckSF
+
+Data does have Outliers
+
+### OpenPorchSF
+
+Data does have Outliers
+
+### EnclosedPorch
+
+Data does have Outliers
+
+### 3SsnPorch
+
+Data does have Outliers
+
+### ScreenPorch
+
+Data does have Outliers
+
+### PoolArea
+
+Data does have Outliers
+
+### MiscVal
+
+Data does have Outliers
+
+### MoSold
+
+Data doesn't have Outliers
+
+### YrSold
+
+Data doesn't have Outliers
+
+### SalePrice
+
+Data does have Outliers
+
+### HasGarage
+
+Data does have Outliers
+
+### GarageYrBltMissing
+
+Data does have Outliers
+
+### HasMasVnr
+
+Data doesn't have Outliers
+
+
+## Correlation Analysis
+
+```
+
+--- Features Sorted by Individual Correlation Strength with SalePrice ---
+OverallQual           0.798851
+GrLivArea             0.716765
+GarageCars            0.643753
+GarageArea            0.623376
+TotalBsmtSF           0.602280
+1stFlrSF              0.595744
+FullBath              0.573884
+TotRmsAbvGrd          0.550273
+YearBuilt             0.543038
+YearRemodAdd          0.516374
+MasVnrArea            0.501624
+Fireplaces            0.460885
+HasMasVnr             0.386434
+BsmtFinSF1            0.385646
+2ndFlrSF              0.350759
+WoodDeckSF            0.327561
+LotFrontage           0.323524
+OpenPorchSF           0.317200
+HalfBath              0.315228
+LotArea               0.263986
+GarageYrBlt           0.257783
+BsmtFullBath          0.234033
+GarageYrBltMissing    0.230593
+HasGarage             0.230593
+BsmtUnfSF             0.197938
+BedroomAbvGr          0.165741
+EnclosedPorch         0.140782
+KitchenAbvGr          0.123441
+ScreenPorch           0.105800
+PoolArea              0.091192
+OverallCond           0.088555
+MSSubClass            0.064533
+3SsnPorch             0.040076
+MoSold                0.039096
+LowQualFinSF          0.028852
+YrSold                0.025836
+BsmtHalfBath          0.023321
+Id                    0.023270
+MiscVal               0.018621
+BsmtFinSF2            0.015220
+Name: SalePrice, dtype: float64
+
+```

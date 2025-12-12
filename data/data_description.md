@@ -1,3 +1,140 @@
+---
+
+# 🏠 House Prices - Advanced Regression Techniques
+## Predict sales prices and practice feature engineering, RFs, and gradient boosting
+
+
+## 🎯 Target Variable
+
+* **SalePrice** — The property's sale price in dollars (target variable).
+
+---
+
+## 🏗️ Property & Building Information
+
+* **MSSubClass** — Building class
+* **MSZoning** — General zoning classification
+* **LotFrontage** — Linear feet of street connected to property
+* **LotArea** — Lot size (square feet)
+* **Street** — Road access type
+* **Alley** — Alley access type
+* **LotShape** — General lot shape
+* **LandContour** — Flatness of the property
+* **Utilities** — Utilities available
+* **LotConfig** — Lot configuration
+* **LandSlope** — Slope of property
+* **Neighborhood** — Physical location within Ames
+* **Condition1** — Proximity to main road or railroad
+* **Condition2** — Additional proximity feature (if present)
+* **BldgType** — Type of dwelling
+* **HouseStyle** — Dwelling style
+
+---
+
+## 🧱 Structure Quality & Condition
+
+* **OverallQual** — Overall material and finish quality
+* **OverallCond** — Overall condition
+* **YearBuilt** — Original construction year
+* **YearRemodAdd** — Remodel year
+* **RoofStyle** — Roof style
+* **RoofMatl** — Roof material
+* **Exterior1st** — Primary exterior covering
+* **Exterior2nd** — Secondary exterior covering
+* **MasVnrType** — Masonry veneer type
+* **MasVnrArea** — Masonry veneer area
+* **ExterQual** — Exterior material quality
+* **ExterCond** — Exterior condition
+* **Foundation** — Foundation type
+
+---
+
+## 🏚️ Basement Features
+
+* **BsmtQual** — Basement height
+* **BsmtCond** — Basement condition
+* **BsmtExposure** — Walkout/garden-level exposure
+* **BsmtFinType1** — Type 1 finished basement area
+* **BsmtFinSF1** — Finished area (Type 1, square feet)
+* **BsmtFinType2** — Type 2 finished basement area
+* **BsmtFinSF2** — Finished area (Type 2, square feet)
+* **BsmtUnfSF** — Unfinished basement area
+* **TotalBsmtSF** — Total basement square footage
+
+---
+
+## 🔥 Heating & Utilities
+
+* **Heating** — Heating type
+* **HeatingQC** — Heating quality/condition
+* **CentralAir** — Central A/C presence
+* **Electrical** — Electrical system
+
+---
+
+## 🏡 Living Area & Rooms
+
+* **1stFlrSF** — First-floor square feet
+* **2ndFlrSF** — Second-floor square feet
+* **LowQualFinSF** — Low-quality finished area (all floors)
+* **GrLivArea** — Above-grade living area (square feet)
+* **BsmtFullBath** — Basement full bathrooms
+* **BsmtHalfBath** — Basement half bathrooms
+* **FullBath** — Above-grade full bathrooms
+* **HalfBath** — Above-grade half bathrooms
+* **Bedroom** — Bedrooms above basement level
+* **Kitchen** — Number of kitchens
+* **KitchenQual** — Kitchen quality
+* **TotRmsAbvGrd** — Total rooms above grade (excluding bathrooms)
+* **Functional** — Home functionality rating
+
+---
+
+## 🔥 Fireplaces
+
+* **Fireplaces** — Number of fireplaces
+* **FireplaceQu** — Fireplace quality
+
+---
+
+## 🚗 Garage Features
+
+* **GarageType** — Garage location
+* **GarageYrBlt** — Year garage was built
+* **GarageFinish** — Interior garage finish
+* **GarageCars** — Garage capacity (cars)
+* **GarageArea** — Garage size (square feet)
+* **GarageQual** — Garage quality
+* **GarageCond** — Garage condition
+
+---
+
+## 🌳 Outdoor & Miscellaneous Features
+
+* **PavedDrive** — Paved driveway indicator
+* **WoodDeckSF** — Wood deck area (square feet)
+* **OpenPorchSF** — Open porch area
+* **EnclosedPorch** — Enclosed porch area
+* **3SsnPorch** — Three-season porch area
+* **ScreenPorch** — Screen porch area
+* **PoolArea** — Pool area (square feet)
+* **PoolQC** — Pool quality
+* **Fence** — Fence quality
+* **MiscFeature** — Miscellaneous feature
+* **MiscVal** — Value of miscellaneous feature
+
+---
+
+## 🗓️ Sale Information
+
+* **MoSold** — Month sold
+* **YrSold** — Year sold
+* **SaleType** — Type of sale
+* **SaleCondition** — Condition of sale
+
+---
+
+
 MSSubClass: Identifies the type of dwelling involved in the sale.	
 
         20	1-STORY 1946 & NEWER ALL STYLES
