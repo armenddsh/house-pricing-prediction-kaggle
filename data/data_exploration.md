@@ -288,3 +288,6 @@ df_test["Electrical"] = df_test["Electrical"].fillna(df_test["Electrical"].mode(
 
 **Checking for Outliers:**
 
+### MSSubClass
+
+Data doesn't have Outliers
