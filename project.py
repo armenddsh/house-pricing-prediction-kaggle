@@ -13,6 +13,38 @@ from sklearn.ensemble import GradientBoostingRegressor
 import warnings
 warnings.filterwarnings('ignore')
 
+import logging
+import sys
+
+def setup_logging(log_file="training.log"):
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+
+    # Avoid duplicate handlers (important in notebooks)
+    if logger.handlers:
+        logger.handlers.clear()
+
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)s | %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+
+    # ---- File handler ----
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.INFO)
+
+    # ---- Stdout handler ----
+    stream_handler = logging.StreamHandler(sys.stdout)
+    stream_handler.setFormatter(formatter)
+    stream_handler.setLevel(logging.INFO)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+
+    return logger
+
+logger = setup_logging("kaggle_training.log")
 
 def clean_data(df):
     df['FireplaceQu'] = df['FireplaceQu'].fillna('None')
@@ -162,7 +194,7 @@ columns = [
 
 
 while True:
-    random_num = random.randint(0, len(columns) + 1)
+    random_num = random.randint(0, round(len(columns) / 2))
     columns_combination = set()
     
     for _ in range(random_num):
@@ -170,7 +202,7 @@ while True:
     else:
         columns_to_test = list(columns_combination)
         
-        print(f'Columns to test: {columns_combination}')
+        logger.info(f'Columns to test: {columns_combination}')
 
         df_test = pd.read_csv('./data/test.csv')
         df_test.head()
@@ -252,8 +284,8 @@ while True:
 
         grid.fit(X, y)
 
-        print("Best CV RMSE:", -grid.best_score_)
-        print("Best params:", grid.best_params_)
+        logger.info("Best CV RMSE:", -grid.best_score_)
+        logger.info("Best params:", grid.best_params_)
 
         best_model = grid.best_estimator_
         best_model.fit(X, y)
