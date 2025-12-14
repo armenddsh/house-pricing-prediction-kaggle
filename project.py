@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 
 import numpy as np
-
+from itertools import combinations
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
@@ -164,6 +164,7 @@ def remove_outliers(df, columns):
         df.loc[outliers, col] = median_value
     
     return df
+    
 
 columns = [
     "OverallQual",
@@ -195,17 +196,18 @@ columns = [
     "YrSold"
 ]
 
+def generate_all_combinations(columns):
+    for r in range(1, len(columns) + 1):
+        for c in combinations(columns, r):
+            yield list(c)
+
 
 while True:
     random_num = random.randint(0, 8)
-    columns_combination = set()
     
-    for _ in range(random_num):
-        columns_combination.add(random.choice(columns))
-    else:
-        columns_to_test = list(columns_combination)
+    for columns_to_test in generate_all_combinations(columns):
         
-        logger.info(f'\nColumns to test: {columns_combination}')
+        logger.info(f'\nColumns to test: {columns_to_test}')
 
         df_test = pd.read_csv('./data/test.csv')
         df_test.head()
