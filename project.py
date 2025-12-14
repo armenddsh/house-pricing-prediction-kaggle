@@ -3,6 +3,14 @@ import pandas as pd
 import seaborn as sns
 
 import numpy as np
+
+import warnings
+warnings.filterwarnings('ignore')
+
+import logging
+import sys
+        
+from sklearn.model_selection import cross_val_score
 from itertools import combinations
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
@@ -10,11 +18,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.ensemble import GradientBoostingRegressor
 
-import warnings
-warnings.filterwarnings('ignore')
-
-import logging
-import sys
 
 def setup_logging(log_file="training.log"):
     logger = logging.getLogger()
@@ -147,6 +150,7 @@ def prepare_clean_data(df):
 
   return df
 
+
 def remove_outliers(df, columns):
     for col in columns:
         
@@ -155,7 +159,7 @@ def remove_outliers(df, columns):
         IQR = Q3 - Q1
 
         upper_bound = Q3 + 1.5 * IQR
-        lower_bound = Q3 - 1.5 * IQR
+        lower_bound = Q1 - 1.5 * IQR
 
         median_value = df[col].median()
 
@@ -164,37 +168,7 @@ def remove_outliers(df, columns):
         df.loc[outliers, col] = median_value
     
     return df
-    
 
-columns = [
-    "OverallQual",
-    "GrLivArea",
-    "GarageCars",
-    "GarageArea",
-    "TotalBsmtSF",
-    "1stFlrSF",
-    "FullBath",
-    "YearBuilt",
-    "GarageYrBlt",
-    "YearRemodAdd",
-    "TotRmsAbvGrd",
-    "MasVnrArea",
-    "Fireplaces",
-    "LotArea",
-    "OpenPorchSF",
-    "BsmtFinSF1",
-    "LotFrontage",
-    "2ndFlrSF",
-    "WoodDeckSF",
-    "HalfBath",
-    "BsmtFullBath",
-    "BsmtUnfSF",
-    "BedroomAbvGr",
-    "OverallCond",
-    "MSSubClass",
-    "MoSold",
-    "YrSold"
-]
 
 def generate_all_combinations(columns):
     for r in range(1, len(columns) + 1):
@@ -202,108 +176,73 @@ def generate_all_combinations(columns):
             yield list(c)
 
 
-while True:
-    random_num = random.randint(0, 8)
-    
-    for columns_to_test in generate_all_combinations(columns):
-        
-        logger.info(f'\nColumns to test: {columns_to_test}')
+def cv_rmse_for_features(df_train, features, target="SalePrice"):
+    X = df_train[features]
+    y = np.log1p(df_train[target])
 
-        df_test = pd.read_csv('./data/test.csv')
-        df_test.head()
+    numeric_preprocess = Pipeline([
+        ("imputer", SimpleImputer(strategy="median"))
+    ])
 
-        df_train = pd.read_csv('./data/train.csv')
-        df_train.head()
-        
-        df_train = prepare_clean_data(df_train)
-        df_test = prepare_clean_data(df_test)
+    preprocessor = ColumnTransformer([
+        ("num", numeric_preprocess, features)
+    ])
 
-        df_train = categorize_columns(df_train)
-        df_test = categorize_columns(df_test)
+    pipe = Pipeline([
+        ("preprocess", preprocessor),
+        ("model", GradientBoostingRegressor(
+            random_state=42,
+            n_estimators=800,
+            learning_rate=0.01,
+            max_depth=3,
+            min_samples_leaf=5
+        ))
+    ])
 
-        df_train = remove_outliers(df_train, columns_to_test)
-        df_test = remove_outliers(df_test, columns_to_test)
+    scores = cross_val_score(
+        pipe, X, y,
+        scoring="neg_root_mean_squared_error",
+        cv=5,
+        n_jobs=-1
+    )
+    return -scores.mean(), scores.std()
 
-        feature_columns = [
-            "OverallQual",
-            "GrLivArea",
-            "GarageCars",
-            "GarageArea",
-            "TotalBsmtSF",
-            "1stFlrSF",
-            "FullBath",
-            "YearBuilt",
-            "GarageYrBlt",
-            "YearRemodAdd",
-            "TotRmsAbvGrd",
-            "MasVnrArea",
-            "Fireplaces",
-            "LotArea",
-            "OpenPorchSF",
-            "BsmtFinSF1",
-            "LotFrontage",
-            "2ndFlrSF",
-            "WoodDeckSF",
-            "HalfBath",
-            "BsmtFullBath",
-            "BsmtUnfSF",
-            "BedroomAbvGr",
-            "OverallCond",
-            "MSSubClass",
-            "MoSold",
-            "YrSold"
-        ]
+# ---- prepare once (NOT inside the loop) ----
+df_train = pd.read_csv('./data/train.csv')
+df_train = prepare_clean_data(df_train)
 
-        target_column = "SalePrice"
+# (optional) don’t one-hot here if you’re only using numeric columns
 
-        X = df_train[feature_columns]
-        y = np.log1p(df_train[target_column])  # log transform
+candidate_features = [
+    "OverallQual","GrLivArea","GarageCars","GarageArea","TotalBsmtSF","1stFlrSF",
+    "FullBath","YearBuilt","GarageYrBlt","YearRemodAdd","TotRmsAbvGrd","MasVnrArea",
+    "Fireplaces","LotArea","OpenPorchSF","BsmtFinSF1","LotFrontage","2ndFlrSF",
+    "WoodDeckSF","HalfBath","BsmtFullBath","BsmtUnfSF","BedroomAbvGr","OverallCond",
+    "MSSubClass","MoSold","YrSold"
+]
 
-        numeric_preprocess = Pipeline([
-            ("imputer", SimpleImputer(strategy="median"))
-        ])
+# start from your correlation order (good heuristic)
+corr_order = [
+    "OverallQual","GrLivArea","GarageCars","GarageArea","TotalBsmtSF","1stFlrSF",
+    "FullBath","YearBuilt","GarageYrBlt","YearRemodAdd","TotRmsAbvGrd","MasVnrArea",
+    "Fireplaces","LotArea","OpenPorchSF","BsmtFinSF1","LotFrontage","2ndFlrSF",
+    "WoodDeckSF","HalfBath","BsmtFullBath","BsmtUnfSF","BedroomAbvGr","OverallCond",
+    "MSSubClass","MoSold","YrSold"
+]
 
-        preprocessor = ColumnTransformer([
-            ("num", numeric_preprocess, feature_columns)
-        ])
+selected = []
+best_rmse = np.inf
 
-        pipe = Pipeline([
-            ("preprocess", preprocessor),
-            ("model", GradientBoostingRegressor(random_state=42))
-        ])
+for f in corr_order:
+    trial = selected + [f]
+    rmse, sd = cv_rmse_for_features(df_train, trial)
+    print(f"Try +{f:15s} => RMSE {rmse:.6f} (±{sd:.6f})")
+    if rmse < best_rmse - 0.0005:   # threshold: keep only real improvements
+        selected = trial
+        best_rmse = rmse
+        print("  ✅ kept")
+    else:
+        print("  ❌ skipped")
 
-        param_grid = {
-            "model__n_estimators": [800], # 1200, 1600
-            "model__learning_rate": [0.01], # 0.05
-            "model__max_depth": [3], # 4
-            "model__min_samples_leaf": [5] # 10
-        }
-
-        grid = GridSearchCV(
-            estimator=pipe,
-            param_grid=param_grid,
-            scoring="neg_root_mean_squared_error",
-            cv=5,
-            n_jobs=-1,
-            verbose=1
-        )
-
-        grid.fit(X, y)
-
-        logger.info(f"Best CV RMSE: {-grid.best_score_}")
-        logger.info(f"Best params: {grid.best_params_}")
-
-        best_model = grid.best_estimator_
-        best_model.fit(X, y)
-
-        X_test = df_test[feature_columns]
-        test_preds_log = best_model.predict(X_test)
-        test_predictions = np.expm1(test_preds_log)
-
-        # submission = pd.DataFrame({
-        #     "Id": df_test["Id"],
-        #     "SalePrice": test_predictions
-        # })
-
-        # submission.to_csv("submission.csv", index=False)
-        # print("Submission rows:", len(submission))
+print("\nSelected features:", selected)
+print("Best CV RMSE:", best_rmse)
