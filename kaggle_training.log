@@ -1,0 +1,166 @@
+2025-12-14 19:38:19 | INFO | 
+Columns to test: {'GrLivArea', 'OpenPorchSF', 'WoodDeckSF', 'LotArea', 'OverallCond', 'BsmtUnfSF', 'HalfBath', 'YearBuilt', 'FullBath'}
+2025-12-14 19:38:38 | INFO | Best CV RMSE: 0.14758380525106038
+2025-12-14 19:38:38 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:38:43 | INFO | 
+Columns to test: {'MasVnrArea'}
+2025-12-14 19:38:59 | INFO | Best CV RMSE: 0.1383668303248476
+2025-12-14 19:38:59 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:39:04 | INFO | 
+Columns to test: {'1stFlrSF', 'TotalBsmtSF'}
+2025-12-14 19:39:20 | INFO | Best CV RMSE: 0.1394375608573472
+2025-12-14 19:39:20 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:39:26 | INFO | 
+Columns to test: {'LotFrontage', 'YearRemodAdd', 'LotArea', 'MasVnrArea', 'BsmtUnfSF', 'BsmtFinSF1', 'GarageYrBlt'}
+2025-12-14 19:39:42 | INFO | Best CV RMSE: 0.14077669851541902
+2025-12-14 19:39:42 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:39:47 | INFO | 
+Columns to test: {'OpenPorchSF', 'OverallCond', 'GarageCars', 'BsmtUnfSF', 'HalfBath', '2ndFlrSF', 'BsmtFullBath', '1stFlrSF', 'TotalBsmtSF'}
+2025-12-14 19:40:03 | INFO | Best CV RMSE: 0.14365263855778831
+2025-12-14 19:40:03 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:40:09 | INFO | 
+Columns to test: {'GrLivArea', 'LotFrontage', 'YearRemodAdd', 'MasVnrArea', 'OverallCond', '2ndFlrSF', 'TotalBsmtSF', 'GarageYrBlt'}
+2025-12-14 19:40:24 | INFO | Best CV RMSE: 0.14335995319696354
+2025-12-14 19:40:24 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:40:29 | INFO | 
+Columns to test: {'GrLivArea', 'BedroomAbvGr', 'OpenPorchSF', 'WoodDeckSF', 'YearRemodAdd', 'LotArea', 'BsmtFinSF1', 'BsmtUnfSF', '2ndFlrSF', 'TotRmsAbvGrd', 'FullBath'}
+2025-12-14 19:40:45 | INFO | Best CV RMSE: 0.14161152759505566
+2025-12-14 19:40:45 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:40:50 | INFO | 
+Columns to test: {'OverallQual', 'BedroomAbvGr', 'GarageCars', '2ndFlrSF', 'BsmtFullBath', 'TotalBsmtSF', 'FullBath', 'GarageYrBlt'}
+2025-12-14 19:41:08 | INFO | Best CV RMSE: 0.14115531194159603
+2025-12-14 19:41:08 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:41:13 | INFO | 
+Columns to test: {'GrLivArea', 'OverallQual', 'YearRemodAdd', 'WoodDeckSF', 'BsmtUnfSF', '2ndFlrSF', 'BsmtFullBath', 'GarageYrBlt'}
+2025-12-14 19:41:29 | INFO | Best CV RMSE: 0.14442419632002843
+2025-12-14 19:41:29 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:41:35 | INFO | 
+Columns to test: {'LotFrontage', 'LotArea', 'MasVnrArea', 'OverallCond', 'HalfBath', '2ndFlrSF', 'BsmtFullBath', 'TotalBsmtSF', 'GarageYrBlt'}
+2025-12-14 19:41:51 | INFO | Best CV RMSE: 0.1450359409201732
+2025-12-14 19:41:51 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:41:56 | INFO | 
+Columns to test: {'LotFrontage', 'LotArea', 'OverallCond', 'MasVnrArea', 'BsmtUnfSF', 'YearBuilt', '1stFlrSF', 'TotalBsmtSF', 'FullBath'}
+2025-12-14 19:42:11 | INFO | Best CV RMSE: 0.14804300626455708
+2025-12-14 19:42:11 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:42:17 | INFO | 
+Columns to test: {'GrLivArea', 'OverallCond'}
+2025-12-14 19:42:32 | INFO | Best CV RMSE: 0.14407213431123286
+2025-12-14 19:42:32 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:42:38 | INFO | 
+Columns to test: {'OpenPorchSF', 'LotArea', 'OverallCond', 'Fireplaces', 'TotRmsAbvGrd', 'GarageArea'}
+2025-12-14 19:42:54 | INFO | Best CV RMSE: 0.1428995596973614
+2025-12-14 19:42:54 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:42:59 | INFO | 
+Columns to test: {'BsmtFullBath', 'TotalBsmtSF'}
+2025-12-14 19:43:15 | INFO | Best CV RMSE: 0.13928401321367417
+2025-12-14 19:43:15 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:43:20 | INFO | 
+Columns to test: {'GrLivArea', 'OverallQual', 'BedroomAbvGr', 'OverallCond', '1stFlrSF', 'TotRmsAbvGrd', 'FullBath'}
+2025-12-14 19:43:45 | INFO | Best CV RMSE: 0.1485302320718377
+2025-12-14 19:43:45 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:43:59 | INFO | 
+Columns to test: {'GrLivArea', 'LotFrontage', 'OverallQual', 'BedroomAbvGr', 'WoodDeckSF', '2ndFlrSF', 'YearBuilt'}
+2025-12-14 19:44:19 | INFO | Best CV RMSE: 0.1456070964235992
+2025-12-14 19:44:19 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:44:26 | INFO | 
+Columns to test: {'GrLivArea', 'OpenPorchSF', 'YearRemodAdd', 'LotArea', 'TotRmsAbvGrd', '2ndFlrSF', '1stFlrSF', 'GarageYrBlt'}
+2025-12-14 19:44:45 | INFO | Best CV RMSE: 0.1444429500303411
+2025-12-14 19:44:45 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:44:51 | INFO | 
+Columns to test: {'GrLivArea', 'LotFrontage', 'OverallQual', 'OpenPorchSF', 'WoodDeckSF', 'MasVnrArea', 'OverallCond', 'BsmtFullBath', 'YearBuilt', 'FullBath'}
+2025-12-14 19:45:07 | INFO | Best CV RMSE: 0.1488552697775621
+2025-12-14 19:45:07 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:45:12 | INFO | 
+Columns to test: {'1stFlrSF', 'BedroomAbvGr', 'OpenPorchSF', 'LotArea'}
+2025-12-14 19:45:29 | INFO | Best CV RMSE: 0.1410073970041934
+2025-12-14 19:45:29 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:45:35 | INFO | 
+Columns to test: {'OverallQual', 'Fireplaces', 'BsmtUnfSF', 'GarageYrBlt'}
+2025-12-14 19:45:57 | INFO | Best CV RMSE: 0.1398039626299342
+2025-12-14 19:45:57 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:46:06 | INFO | 
+Columns to test: {'OverallCond', 'MasVnrArea', 'Fireplaces', 'BsmtFinSF1', 'HalfBath', 'BsmtUnfSF', '2ndFlrSF', 'YearBuilt', 'TotalBsmtSF', 'GarageYrBlt'}
+2025-12-14 19:46:28 | INFO | Best CV RMSE: 0.1430010453711291
+2025-12-14 19:46:28 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:46:39 | INFO | 
+Columns to test: {'HalfBath', 'OverallQual', 'Fireplaces', 'BsmtFinSF1'}
+2025-12-14 19:47:02 | INFO | Best CV RMSE: 0.13955647029385074
+2025-12-14 19:47:02 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:47:09 | INFO | 
+Columns to test: {'OpenPorchSF', 'WoodDeckSF', 'OverallCond', 'GarageCars', 'HalfBath', 'BsmtFinSF1', 'BsmtFullBath', '1stFlrSF', 'GarageArea'}
+2025-12-14 19:47:38 | INFO | Best CV RMSE: 0.14374843577326618
+2025-12-14 19:47:38 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:47:44 | INFO | 
+Columns to test: {'LotFrontage', 'BedroomAbvGr', 'LotArea', 'GarageCars', 'BsmtFinSF1', 'YearBuilt', 'TotRmsAbvGrd', 'GarageYrBlt'}
+2025-12-14 19:48:05 | INFO | Best CV RMSE: 0.14368369557182284
+2025-12-14 19:48:05 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:48:12 | INFO | 
+Columns to test: {'OpenPorchSF', 'LotArea', 'MasVnrArea', 'OverallCond', 'FullBath', 'GarageYrBlt'}
+2025-12-14 19:48:30 | INFO | Best CV RMSE: 0.1432165086822459
+2025-12-14 19:48:30 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:48:35 | INFO | 
+Columns to test: {'BedroomAbvGr', 'WoodDeckSF', 'OverallCond', '2ndFlrSF', 'BsmtFullBath', 'FullBath'}
+2025-12-14 19:48:56 | INFO | Best CV RMSE: 0.1413589217604031
+2025-12-14 19:48:56 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:49:02 | INFO | 
+Columns to test: {'GrLivArea', 'BsmtUnfSF', 'OpenPorchSF', 'GarageArea'}
+2025-12-14 19:49:18 | INFO | Best CV RMSE: 0.13852698782566436
+2025-12-14 19:49:18 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:49:25 | INFO | 
+Columns to test: {'GrLivArea', 'OverallQual', 'MasVnrArea', 'GarageArea', 'YearBuilt', 'FullBath', 'GarageYrBlt'}
+2025-12-14 19:49:50 | INFO | Best CV RMSE: 0.143824656470571
+2025-12-14 19:49:50 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:49:57 | INFO | 
+Columns to test: {'MasVnrArea', 'LotArea', 'OpenPorchSF', 'BsmtFinSF1'}
+2025-12-14 19:50:22 | INFO | Best CV RMSE: 0.13937270432045393
+2025-12-14 19:50:22 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:50:28 | INFO | 
+Columns to test: {'GrLivArea', 'OpenPorchSF', 'HalfBath', 'BsmtFinSF1', 'BsmtUnfSF', '1stFlrSF', 'TotalBsmtSF'}
+2025-12-14 19:50:46 | INFO | Best CV RMSE: 0.14398232584720025
+2025-12-14 19:50:46 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:50:53 | INFO | 
+Columns to test: {'GrLivArea', 'OpenPorchSF', 'OverallCond', 'GarageCars', 'BsmtFinSF1', 'BsmtFullBath'}
+2025-12-14 19:51:11 | INFO | Best CV RMSE: 0.14349925651722012
+2025-12-14 19:51:11 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:51:17 | INFO | 
+Columns to test: {'GrLivArea', 'OverallQual', 'YearRemodAdd', 'LotArea', 'OverallCond', 'YearBuilt', '1stFlrSF', 'GarageYrBlt', 'GarageArea'}
+2025-12-14 19:51:33 | INFO | Best CV RMSE: 0.15177596488805128
+2025-12-14 19:51:33 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:51:39 | INFO | 
+Columns to test: {'GrLivArea', 'BedroomAbvGr', 'OverallCond', 'GarageCars', 'TotalBsmtSF', 'FullBath'}
+2025-12-14 19:51:56 | INFO | Best CV RMSE: 0.1443888634366864
+2025-12-14 19:51:56 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:52:02 | INFO | 
+Columns to test: {'GrLivArea', '2ndFlrSF'}
+2025-12-14 19:52:19 | INFO | Best CV RMSE: 0.14240249662743204
+2025-12-14 19:52:19 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:52:25 | INFO | 
+Columns to test: {'MasVnrArea', 'BsmtUnfSF', '1stFlrSF', 'TotRmsAbvGrd', 'TotalBsmtSF'}
+2025-12-14 19:52:45 | INFO | 
+Columns to test: {'2ndFlrSF'}
+2025-12-14 19:53:00 | INFO | 
+Columns to test: {'HalfBath', 'WoodDeckSF', 'TotalBsmtSF', 'FullBath', 'GarageYrBlt', 'MSSubClass', 'GrLivArea'}
+2025-12-14 19:53:20 | INFO | Best CV RMSE: 0.14145303896665218
+2025-12-14 19:53:20 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:53:25 | INFO | 
+Columns to test: {'LotFrontage', 'HalfBath', 'MoSold'}
+2025-12-14 19:53:42 | INFO | Best CV RMSE: 0.13897995895539222
+2025-12-14 19:53:42 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:53:47 | INFO | 
+Columns to test: {'BsmtFullBath'}
+2025-12-14 19:54:05 | INFO | Best CV RMSE: 0.1394926007420479
+2025-12-14 19:54:05 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:54:10 | INFO | 
+Columns to test: {'1stFlrSF', 'YearRemodAdd', 'HalfBath', 'TotalBsmtSF', 'LotFrontage'}
+2025-12-14 19:54:27 | INFO | Best CV RMSE: 0.1390223804124296
+2025-12-14 19:54:27 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:54:32 | INFO | 
+Columns to test: {'2ndFlrSF', 'WoodDeckSF', 'HalfBath'}
+2025-12-14 19:54:48 | INFO | Best CV RMSE: 0.13829387611513774
+2025-12-14 19:54:48 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:54:54 | INFO | 
+Columns to test: {'YearRemodAdd', 'HalfBath', 'BsmtUnfSF', 'BedroomAbvGr', 'LotFrontage', 'LotArea'}
+2025-12-14 19:55:10 | INFO | Best CV RMSE: 0.14098348223797968
+2025-12-14 19:55:10 | INFO | Best params: {'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__min_samples_leaf': 5, 'model__n_estimators': 800}
+2025-12-14 19:55:16 | INFO | 
+Columns to test: {'YearRemodAdd', 'MoSold', 'FullBath', 'GarageYrBlt', 'LotFrontage', 'GrLivArea'}

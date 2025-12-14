@@ -189,12 +189,15 @@ columns = [
     "BsmtFullBath",
     "BsmtUnfSF",
     "BedroomAbvGr",
-    "OverallCond"
+    "OverallCond",
+    "MSSubClass",
+    "MoSold",
+    "YrSold"
 ]
 
 
 while True:
-    random_num = random.randint(0, round(len(columns) / 2))
+    random_num = random.randint(0, 8)
     columns_combination = set()
     
     for _ in range(random_num):
@@ -243,12 +246,13 @@ while True:
             "BsmtFullBath",
             "BsmtUnfSF",
             "BedroomAbvGr",
-            "OverallCond"
+            "OverallCond",
+            "MSSubClass",
+            "MoSold",
+            "YrSold"
         ]
 
         target_column = "SalePrice"
-
-
 
         X = df_train[feature_columns]
         y = np.log1p(df_train[target_column])  # log transform
