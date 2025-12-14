@@ -202,7 +202,7 @@ while True:
     else:
         columns_to_test = list(columns_combination)
         
-        logger.info(f'Columns to test: {columns_combination}')
+        logger.info(f'\nColumns to test: {columns_combination}')
 
         df_test = pd.read_csv('./data/test.csv')
         df_test.head()
@@ -284,8 +284,8 @@ while True:
 
         grid.fit(X, y)
 
-        logger.info("Best CV RMSE:", -grid.best_score_)
-        logger.info("Best params:", grid.best_params_)
+        logger.info(f"Best CV RMSE: {-grid.best_score_}")
+        logger.info(f"Best params: {grid.best_params_}")
 
         best_model = grid.best_estimator_
         best_model.fit(X, y)
