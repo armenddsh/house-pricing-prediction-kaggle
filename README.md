@@ -63,3 +63,11 @@ conda activate data-prog-env
 
 - Extend `project.py` to automatically train the final model and emit submissions (mirroring the notebook flow).
 - Experiment with stacked/ensemble models (`LightGBM`, `CatBoost`) using the dependencies defined in `pyproject.toml`.
+
+## Streamlit App
+
+Run a quick local predictor UI once the model is saved:
+
+```bash
+streamlit run app.py
+```
