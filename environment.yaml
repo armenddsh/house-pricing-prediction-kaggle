@@ -13,4 +13,7 @@ dependencies:
   - matplotlib=3.10.6
   - requests=2.32.5
   - flake8=7.3.0
+  - xgboost
+  - catboost
+  - lightgbm
 prefix: /home/armend/miniconda3/envs/data-prog-env

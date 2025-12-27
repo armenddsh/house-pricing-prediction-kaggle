@@ -26,6 +26,11 @@ conda env create --name data-prog-env --file=environment.yaml
 conda activate data-prog-env
 ```
 
+## Conda export
+```
+conda export -n data-prog-env -f environment.yaml --from-history
+```
+
 ## Workflow
 
 1. **Explore & understand the data**  
