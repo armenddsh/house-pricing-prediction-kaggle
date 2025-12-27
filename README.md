@@ -34,20 +34,14 @@ conda export -n data-prog-env -f environment.yaml --from-history
 ## Workflow
 
 1. **Explore & understand the data**  
-   - Start in `data_exploration.ipynb` / `data_exploration_v2.ipynb` to inspect the 79 features, missingness, and correlations (a written summary also lives in `data/data_exploration.md`).
+   - Start in `data_exploration.ipynb` / `data_exploration_deprecated.ipynb` to inspect the 79 features, missingness, and correlations (a written summary also lives in `data/data_exploration.md`).
    - The notebooks rely on `pandas`, `seaborn`, and `AutoViz` for quick profile-style reports.
 
-2. **Feature engineering & cleaning**  
-   - Reusable functions live in `project.py`: `prepare_clean_data`, `clean_data`, `remove_outliers`, and `categorize_columns`.
-   - The current pipeline fills high-missing categorical columns with `"None"`, imputes numeric columns with medians, adds helper flags such as `HasGarage` / `GarageYrBltMissing`, caps outliers via IQR clipping, and drops `Id` plus low-signal columns.
+2. **Preparing and cleaning data**  
+   - Start in `clean_prepare_data.ipynb`
 
-3. **Model search / training**  
-   - Run the sequential feature-selection script:
-     ```bash
-     uv run python project.py
-     ```
-   - The script iterates through a correlation-ordered candidate list, evaluates each subset with a 5-fold CV `GradientBoostingRegressor` (log-transforming `SalePrice` via `log1p`), and keeps only improvements (`~0.0005` RMSE tolerance).  
-   - Detailed progress—including the best CV log-RMSE (~0.138) and tuned hyperparameters (`n_estimators=800`, `learning_rate=0.01`, `max_depth=3`, `min_samples_leaf=5`)—is persisted to `kaggle_training.log`.
+3. **Feature selection and model search / training**  
+   - `feature_model_selection.ipynb` - contains feature selection and different model search
 
 4. **Build the submission**  
    - `project.ipynb` loads the selected features, retrains on the full training set, and predicts on `data/test.csv`.  
